@@ -2,12 +2,39 @@ Page({
   /**
    * 页面的初始数据
    */
-  data: {},
+  data: {
+    swiperList: [],
+    currentIndex: 0,
+  },
+
+  onSwiperChange(e) {
+    const { current } = e.detail
+    this.setData({
+      currentIndex: current,
+    })
+  },
+
+  /**
+   * 加载轮播图数据
+   */
+  _loadSwiperList() {
+    const swiperList = [
+      { imageUrl: '/assets/images/swiper/m1.gif' },
+      { imageUrl: '/assets/images/swiper/m2.gif' },
+      { imageUrl: '/assets/images/swiper/m3.gif' },
+      { imageUrl: '/assets/images/swiper/m4.gif' },
+    ]
+    this.setData({
+      swiperList,
+    })
+  },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad(options) {},
+  onLoad(options) {
+    this._loadSwiperList()
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成

@@ -1,0 +1,36 @@
+.page {
+  .swiper-container {
+    height: 630rpx;
+    position: relative;
+    swiper {
+      height: 100%;
+      swiper-item {
+        height: 100%;
+        image {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+    .dots {
+      position: absolute;
+      left: 50rpx;
+      bottom: 50rpx;
+      display: flex;
+      .dot {
+        width: 8rpx;
+        height: 8rpx;
+        background-color: #ffffff;
+        opacity: 0.5;
+        border-radius: 4rpx;
+        &:nth-child(n + 2) {
+          margin-left: 4rpx;
+        }
+        &.active {
+          width: 29rpx;
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
