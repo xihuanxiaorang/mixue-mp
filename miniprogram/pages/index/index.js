@@ -1,3 +1,5 @@
+import swiper from '../../api/swiper'
+
 Page({
   /**
    * 页面的初始数据
@@ -17,16 +19,9 @@ Page({
   /**
    * 加载轮播图数据
    */
-  _loadSwiperList() {
-    const swiperList = [
-      { imageUrl: '/assets/images/swiper/m1.gif' },
-      { imageUrl: '/assets/images/swiper/m2.gif' },
-      { imageUrl: '/assets/images/swiper/m3.gif' },
-      { imageUrl: '/assets/images/swiper/m4.gif' },
-    ]
-    this.setData({
-      swiperList,
-    })
+  async _loadSwiperList() {
+    const { data: swiperList } = await swiper.list()
+    this.setData({ swiperList })
   },
 
   /**
