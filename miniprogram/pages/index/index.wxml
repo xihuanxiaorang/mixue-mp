@@ -1,4 +1,5 @@
 <view class="page">
+  <!-- 轮播图区域 -->
   <view class="swiper-container">
     <swiper bindchange="onSwiperChange" circular autoplay interval="4000">
       <swiper-item wx:for="{{ swiperList }}" wx:key="index">
@@ -8,5 +9,31 @@
     <view class="dots">
       <view class="dot {{ currentIndex === index ? 'active' : '' }}" wx:for="{{ swiperList }}" wx:key="index"> </view>
     </view>
+  </view>
+
+  <!-- 会员授权登录与积分区域 -->
+  <view class="member-container">
+    <view class="vip-wrapper">
+      <image src="/assets/images/vip.png"></image>
+      <view class="info" wx:if="{{ isLogin }}">
+        <view class="phone">181******25</view>
+        <view class="rank">微雪花会员</view>
+      </view>
+      <view class="meta" wx:else>
+        <view class="title">尊敬的用户</view>
+        <view class="tips">登录领取20元新人券包</view>
+      </view>
+    </view>
+    <view class="point-wrapper" wx:if="{{ isLogin }}">
+      <view class="point">
+        <view class="count">0</view>
+        <view class="desc">雪王币</view>
+      </view>
+      <view class="point">
+        <view class="count">0</view>
+        <view class="desc">优惠券</view>
+      </view>
+    </view>
+    <view wx:else class="login-btn">授权登录</view>
   </view>
 </view>
