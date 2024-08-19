@@ -10,6 +10,19 @@ Page({
     isLogin: false,
   },
 
+  /**
+   * 跳转到登录页面
+   */
+  gotoLogin() {
+    wx.navigateTo({
+      url: '/pages/login/login',
+    })
+  },
+
+  /**
+   * 当轮播图发生切换时调用
+   * @param {*} e
+   */
   onSwiperChange(e) {
     const { current: currentIndex } = e.detail
     this.setData({

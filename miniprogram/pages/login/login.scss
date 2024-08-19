@@ -1,0 +1,44 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .logo {
+    margin-top: 170rpx;
+    width: 136rpx;
+    height: 136rpx;
+  }
+  .title {
+    margin-top: 25rpx;
+    font-size: 29rpx;
+  }
+  .intro {
+    margin-top: 170rpx;
+    font-size: 29rpx;
+    font-weight: bold;
+  }
+  .tips {
+    margin-top: 86rpx;
+    font-size: 21rpx;
+    color: #aaaaaa;
+  }
+  .login-btn {
+    margin-top: 26rpx;
+    width: 589rpx;
+    height: 87rpx;
+    border-radius: 13rpx;
+    background-color: #e60012;
+    color: #ffffff;
+    font-size: 29rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &.button-hover {
+      background-color: #c30014;
+    }
+  }
+  .cancle {
+    margin-top: 428rpx;
+    font-size: 25rpx;
+    color: #aaaaaa;
+  }
+}
