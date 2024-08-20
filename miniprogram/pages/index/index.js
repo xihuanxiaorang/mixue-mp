@@ -44,4 +44,16 @@ Page({
   onLoad(options) {
     this._loadSwiperList()
   },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow() {
+    const phoneNumber = wx.getStorageSync('phoneNumber')
+    if (phoneNumber) {
+      this.setData({
+        isLogin: true,
+      })
+    }
+  },
 })

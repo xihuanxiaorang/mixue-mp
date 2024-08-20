@@ -5,42 +5,14 @@ Page({
   data: {},
 
   /**
-   * 生命周期函数--监听页面加载
+   * 模拟手机号一键登录
+   * @param {*} e
    */
-  onLoad(options) {},
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady() {},
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow() {},
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide() {},
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload() {},
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh() {},
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom() {},
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage() {},
+  login(e) {
+    // TODO 用户同意授权后，将动态令牌code传递给云函数的作为参数，在云函数中使用云调用获取手机号并返回，
+    // 具体写法可以参考 https://developers.weixin.qq.com/miniprogram/dev/OpenApiDoc/user-info/phone-number/getPhoneNumber.html#%E4%BA%91%E8%B0%83%E7%94%A8
+    const phoneNumber = 13838384388
+    wx.setStorageSync('phoneNumber', phoneNumber)
+    wx.navigateBack({ delta: 0 })
+  },
 })

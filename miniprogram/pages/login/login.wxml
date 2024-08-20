@@ -3,6 +3,8 @@
   <view class="title">蜜雪冰城</view>
   <view class="intro">成为会员，立享更多优惠福利</view>
   <view class="tips">授权绑定手机号 为您提供更好的服务</view>
-  <button class="login-btn">一键登录</button>
+  <!-- 由于没有个体户/企业账号，因此没有权限使用该功能 -->
+  <!-- <button class="login-btn" open-type="getPhoneNumber" bindgetphonenumber="login">一键登录</button> -->
+  <button class="login-btn" bind:tap="login">一键登录</button>
   <view class="cancle">暂不登录</view>
 </view>
