@@ -3,7 +3,7 @@
   <view class="swiper-container">
     <swiper bindchange="onSwiperChange" circular autoplay interval="4000">
       <swiper-item wx:for="{{ swiperList }}" wx:key="index">
-        <image src="{{ item.imageUrl }}" mode="aspectFill"></image>
+        <image src="{{ item.imageUrl }}" mode="aspectFill" />
       </swiper-item>
     </swiper>
     <view class="dots">
@@ -14,7 +14,7 @@
   <!-- 会员授权登录与积分区域 -->
   <view class="member-container">
     <view class="vip-wrapper">
-      <image src="/assets/images/vip.png"></image>
+      <image src="/assets/images/vip.png" />
       <view class="info" wx:if="{{ isLogin }}">
         <view class="phone">181******25</view>
         <view class="rank">微雪花会员</view>
@@ -35,5 +35,21 @@
       </view>
     </view>
     <view wx:else class="login-btn" bind:tap="gotoLogin">授权登录</view>
+  </view>
+
+  <!-- 点单区域 -->
+  <view class="menu-container">
+    <view class="location">
+      <image src="/assets/images/location.svg" mode="aspectFill" />
+      <view class="position">蜜雪冰城（万家丽宽寓大厦点）</view>
+    </view>
+    <navigator url="/pages/menu/menu" open-type="switchTab" hover-class="none">
+      <image class="bg-banner" src="/assets/images/menu-banner.jpg" />
+    </navigator>
+    <view class="banner-list">
+      <image class="banner" src="/assets/images/banner-01.gif" mode="aspectFit" />
+      <image class="banner" src="/assets/images/banner-02.gif" />
+      <image class="banner" src="/assets/images/banner-03.gif" />
+    </view>
   </view>
 </view>
