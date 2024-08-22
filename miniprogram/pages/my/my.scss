@@ -1,0 +1,156 @@
+.page {
+  min-height: 100vh;
+
+  .member-container {
+    padding: 190rpx 24rpx 0 24rpx;
+    background: linear-gradient(180deg, #fcecec, #ffffff);
+    &.active {
+      background: linear-gradient(180deg, #e3ebff, #e3ebff, #ffffff);
+    }
+    .vip-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .info {
+        display: flex;
+        align-items: center;
+        .avatar {
+          width: 80rpx;
+          height: 80rpx;
+        }
+        .phone {
+          margin-left: 24rpx;
+          font-size: 32rpx;
+          font-weight: bold;
+        }
+        .tips {
+          margin-left: 24rpx;
+          font-size: 28rpx;
+        }
+      }
+      .sign-in-btn {
+        width: 127rpx;
+        height: 54rpx;
+        background-color: #ffffff;
+        font-size: 23rpx;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 6rpx;
+      }
+      .login-btn {
+        width: 125rpx;
+        height: 47rpx;
+        color: #ffffff;
+        background-color: #e60012;
+        font-size: 23rpx;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 6rpx;
+      }
+    }
+
+    .point-wrapper {
+      margin-top: 47rpx;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .item {
+        width: 339rpx;
+        height: 129rpx;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border: 1rpx solid #faf1f1;
+        border-radius: 22rpx;
+        background: linear-gradient(270deg, #fef8f9, #ffffff);
+        .point {
+          margin-left: 36rpx;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          .count {
+            font-size: 28rpx;
+            font-weight: bold;
+          }
+          .desc {
+            margin-top: 29rpx;
+            font-size: 20rpx;
+            color: #aaaaaa;
+          }
+        }
+        image {
+          margin-right: 42rpx;
+          width: 60rpx;
+          height: 70rpx;
+        }
+      }
+    }
+  }
+
+  .services-container {
+    margin: 47rpx 24rpx 0 24rpx;
+    .service {
+      background-color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 36rpx 30rpx;
+      .content {
+        display: flex;
+        align-items: center;
+        .icon {
+          width: 40rpx;
+          height: 40rpx;
+        }
+        .label {
+          margin-left: 26rpx;
+          font-size: 26rpx;
+        }
+      }
+      .arrow {
+        width: 20rpx;
+        height: 20rpx;
+      }
+    }
+  }
+
+  .app-container {
+    margin: 81rpx 24rpx 0 24rpx;
+    height: 127rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1rpx solid #eeeeee;
+    border-radius: 21rpx;
+    .left {
+      padding-left: 30rpx;
+      display: flex;
+      align-items: center;
+      .logo {
+        width: 51rpx;
+        height: 51rpx;
+        border-radius: 10rpx;
+      }
+      .label {
+        margin-left: 15rpx;
+        font-size: 25rpx;
+      }
+    }
+    .right {
+      padding-right: 30rpx;
+      display: flex;
+      align-items: center;
+      .tips {
+        font-size: 25rpx;
+        color: #aaaaaa;
+      }
+      .arrow {
+        margin-left: 16rpx;
+        width: 20rpx;
+        height: 20rpx;
+      }
+    }
+  }
+}

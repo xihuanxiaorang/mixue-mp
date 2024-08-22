@@ -1,13 +1,26 @@
 import swiper from '../../api/swiper'
+const computedBehavior = require('miniprogram-computed').behavior
 
 Page({
+  behaviors: [computedBehavior],
+
   /**
    * 页面的初始数据
    */
   data: {
     swiperList: [],
     currentIndex: 0,
-    isLogin: false,
+    mobile: '',
+  },
+
+  computed: {
+    desensitiveMobile(data) {
+      let mobile = data.mobile
+      if (mobile) {
+        mobile = mobile.replace(/^(\d{3})\d+(\d{2})$/, '$1******$2')
+      }
+      return mobile
+    },
   },
 
   /**
@@ -49,10 +62,10 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
-    const phoneNumber = wx.getStorageSync('phoneNumber')
-    if (phoneNumber) {
+    const mobile = wx.getStorageSync('mobile')
+    if (mobile) {
       this.setData({
-        isLogin: true,
+        mobile,
       })
     }
   },

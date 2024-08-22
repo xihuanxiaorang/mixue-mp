@@ -15,8 +15,8 @@
   <view class="member-container">
     <view class="vip-wrapper">
       <image src="/assets/images/vip.png" />
-      <view class="info" wx:if="{{ isLogin }}">
-        <view class="phone">181******25</view>
+      <view class="info" wx:if="{{ mobile }}">
+        <view class="phone">{{ desensitiveMobile }}</view>
         <view class="rank">微雪花会员</view>
       </view>
       <view class="meta" wx:else>
@@ -24,7 +24,7 @@
         <view class="tips">登录领取20元新人券包</view>
       </view>
     </view>
-    <view class="point-wrapper" wx:if="{{ isLogin }}">
+    <view class="point-wrapper" wx:if="{{ mobile }}">
       <view class="point">
         <view class="count">0</view>
         <view class="desc">雪王币</view>

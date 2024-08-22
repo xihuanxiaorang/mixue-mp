@@ -13,5 +13,8 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "dependencies": {
+    "miniprogram-computed": "^5.0.0"
   }
 }

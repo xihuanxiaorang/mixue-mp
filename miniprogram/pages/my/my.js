@@ -1,46 +1,43 @@
+const computedBehavior = require('miniprogram-computed').behavior
+
 Page({
+  behaviors: [computedBehavior],
+
   /**
    * 页面的初始数据
    */
-  data: {},
+  data: {
+    mobile: null,
+  },
+
+  computed: {
+    desensitiveMobile(data) {
+      let mobile = data.mobile
+      if (mobile) {
+        mobile = mobile.replace(/^(\d{3})\d+(\d{2})$/, '$1******$2')
+      }
+      return mobile
+    },
+  },
 
   /**
-   * 生命周期函数--监听页面加载
+   * 跳转到登录页面
    */
-  onLoad(options) {},
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady() {},
+  gotoLogin() {
+    wx.navigateTo({
+      url: '/pages/login/login',
+    })
+  },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow() {},
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide() {},
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload() {},
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh() {},
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom() {},
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage() {},
+  onShow() {
+    const mobile = wx.getStorageSync('mobile')
+    if (mobile) {
+      this.setData({
+        mobile,
+      })
+    }
+  },
 })
