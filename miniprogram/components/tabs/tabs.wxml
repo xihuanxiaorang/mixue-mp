@@ -1,0 +1,12 @@
+<view class="tabs">
+  <view
+    class="tab {{ index === currentIndex ? 'active' : '' }}"
+    wx:for="{{ tabs }}"
+    wx:key="index"
+    data-index="{{ index }}"
+    bind:tap="onTabChange"
+  >
+    {{ item.label }}
+  </view>
+  <view class="underline" style="{{ 'width: ' + underlineWidth + 'px;left: ' + underlineLeft + 'px;' }}"></view>
+</view>

@@ -1,0 +1,11 @@
+<view class="page">
+  <view class="header-container">
+    <tabs tabs="{{ tabs }}"></tabs>
+    <view class="search">
+      <image class="icon" src="/assets/images/search.svg" mode="" />
+      <view class="label">搜索门店</view>
+    </view>
+  </view>
+  <view class="map-container"></view>
+  <scroll-view class="stores-container"></scroll-view>
+</view>

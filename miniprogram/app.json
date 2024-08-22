@@ -1,5 +1,12 @@
 {
-  "pages": ["pages/index/index", "pages/order/order", "pages/my/my", "pages/menu/menu", "pages/login/login"],
+  "pages": [
+    "pages/index/index",
+    "pages/order/order",
+    "pages/my/my",
+    "pages/menu/menu",
+    "pages/login/login",
+    "pages/store/store"
+  ],
   "window": {
     "navigationBarBackgroundColor": "#FFFFFF",
     "navigationBarTitleText": "蜜雪冰城",
