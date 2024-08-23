@@ -43,6 +43,12 @@
       }
     ]
   },
+  "requiredPrivateInfos": ["getLocation", "chooseLocation"],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "您的位置信息将用于给您匹配最佳门店"
+    }
+  },
   "sitemapLocation": "sitemap.json",
   "style": "v2",
   "lazyCodeLoading": "requiredComponents"

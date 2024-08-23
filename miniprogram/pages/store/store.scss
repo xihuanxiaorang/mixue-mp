@@ -1,9 +1,12 @@
 .page {
+  --header-container-height: 98rpx;
+  --store-map-height: 521rpx;
+  --collapse-panel-height: 68rpx;
   min-height: 100vh;
 
   .header-container {
     padding: 0 24rpx 0 38rpx;
-    height: 98rpx;
+    height: var(--header-container-height);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -23,6 +26,135 @@
         margin-left: 7rpx;
         font-size: 22rpx;
         color: #aaaaaa;
+      }
+    }
+  }
+
+  .map-container {
+    .store-map {
+      width: 100%;
+      height: var(--store-map-height);
+      position: relative;
+      .current-location {
+        width: 51rpx;
+        height: 51rpx;
+        position: absolute;
+        right: 18rpx;
+        bottom: 33rpx;
+      }
+    }
+  }
+
+  .collapse-panel {
+    width: 100%;
+    height: var(--collapse-panel-height);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 1rpx solid #eaeaea;
+    .label {
+      font-size: 25rpx;
+      color: #777777;
+    }
+    .icon {
+      margin-left: 20rpx;
+      width: 32rpx;
+      height: 32rpx;
+    }
+  }
+
+  .stores-container {
+    width: 100%;
+    height: calc(100vh - var(--header-container-height) - var(--store-map-height) - var(--collapse-panel-height));
+    background-color: #f8f8f8;
+    .store {
+      margin: 24rpx;
+      padding: 30rpx 24rpx;
+      background-color: #ffffff;
+      border-radius: 19rpx;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .info {
+        border-right: 1rpx solid #eeeeee;
+        flex: 1;
+        .name {
+          font-size: 25rpx;
+          font-weight: bold;
+        }
+        .tag {
+          margin-top: 18rpx;
+          display: flex;
+          align-items: center;
+          .trading {
+            width: 111rpx;
+            height: 50rpx;
+            background-color: #d60017;
+            color: #ffffff;
+            border-radius: 6rpx;
+            font-size: 23rpx;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+          .room-service {
+            margin-left: 14rpx;
+            width: 111rpx;
+            height: 50rpx;
+            background-color: #fef8f8;
+            color: #d60017;
+            border-radius: 6rpx;
+            font-size: 23rpx;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+        }
+        .opening-hours {
+          margin-top: 18rpx;
+          font-size: 23rpx;
+          color: #777777;
+        }
+        .address {
+          margin-top: 24rpx;
+          font-size: 23rpx;
+          color: #777777;
+        }
+      }
+      .location {
+        width: 184rpx;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .star {
+          width: 27rpx;
+          height: 27rpx;
+        }
+        .label {
+          margin-top: 44rpx;
+          font-size: 21rpx;
+        }
+        .action-wrapper {
+          margin-top: 28rpx;
+          display: flex;
+          align-items: center;
+          .action-btn {
+            width: 44rpx;
+            height: 44rpx;
+            background-color: #fef9f9;
+            border-radius: 22rpx;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            image {
+              width: 21rpx;
+              height: 21rpx;
+            }
+            &.phone {
+              margin-left: 24rpx;
+            }
+          }
+        }
       }
     }
   }
