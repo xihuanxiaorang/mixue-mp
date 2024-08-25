@@ -10,6 +10,7 @@
     </tr>
     <tr>
         <td align="center"><img src="https://cdn.jsdelivr.net/gh/xihuanxiaorang/img2/202408232309771.png" alt="image-20240823230945730" /></td>
-        <td align="center"><img src="https://cdn.jsdelivr.net/gh/xihuanxiaorang/img2/202408232304107.png" alt="image-20240823230427024" /></td>
+        <td align="center"><img src="https://cdn.jsdelivr.net/gh/xihuanxiaorang/img2/202408251821487.png" alt="image-20240825182115386" /></td>
     </tr>
 </table>
+

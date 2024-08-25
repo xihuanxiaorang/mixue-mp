@@ -1,0 +1,314 @@
+{
+  "_id": "8df0e92f66c97eba083df64824180f52",
+  "owner": "1824343943104831490",
+  "createdAt": 1724481210473,
+  "createBy": "1824343943104831490",
+  "business_status": "OPENING",
+  "updateBy": "1824343943104831490",
+  "delivery_method": [
+    "TAKEAWAY"
+  ],
+  "_openid": "1824343943104831490",
+  "opening_hours": "09:00-24:00",
+  "name": "蜜雪冰城（沁园美食街店）",
+  "position": {
+    "address": "湖南省长沙市芙蓉区古汉路沁园小区银港农贸市场外38号",
+    "geopoint": {
+      "coordinates": [
+        113.032999,
+        28.204777
+      ],
+      "type": "Point"
+    }
+  },
+  "updatedAt": 1724571037212,
+  "phone": "19310061319"
+}
+{
+  "_id": "8df0e92f66c97eba083df6497b7aa740",
+  "owner": "1824343943104831490",
+  "createdAt": 1724481210473,
+  "createBy": "1824343943104831490",
+  "business_status": "OPENING",
+  "updateBy": "1824343943104831490",
+  "delivery_method": [
+    "TAKEAWAY"
+  ],
+  "_openid": "1824343943104831490",
+  "opening_hours": "09:31-23:31",
+  "name": "蜜雪冰城（上河国际高桥店）",
+  "position": {
+    "address": "湖南省长沙市雨花区万家丽中路一段358号上河国际商业广场C2栋112",
+    "geopoint": {
+      "coordinates": [
+        113.027753,
+        28.17974
+      ],
+      "type": "Point"
+    }
+  },
+  "updatedAt": 1724570864470,
+  "phone": "13223018888"
+}
+{
+  "_id": "8df0e92f66c97eba083df64a6272d64b",
+  "owner": "1824343943104831490",
+  "createdAt": 1724481210473,
+  "createBy": "1824343943104831490",
+  "business_status": "OPENING",
+  "updateBy": "1824343943104831490",
+  "delivery_method": [
+    "TAKEAWAY"
+  ],
+  "_openid": "1824343943104831490",
+  "opening_hours": "00:00-02:00,10:30-24:00",
+  "name": "蜜雪冰城(荷花路店)",
+  "position": {
+    "address": "湖南省长沙市芙蓉区扬帆小区D2栋后南10号门面",
+    "geopoint": {
+      "coordinates": [
+        113.036291,
+        28.191171
+      ],
+      "type": "Point"
+    }
+  },
+  "updatedAt": 1724570859190,
+  "phone": "19375122386"
+}
+{
+  "_id": "8df0e92f66c97eba083df64b534b0a91",
+  "owner": "1824343943104831490",
+  "createdAt": 1724481210473,
+  "createBy": "1824343943104831490",
+  "business_status": "OPENING",
+  "updateBy": "1824343943104831490",
+  "delivery_method": [
+    "TAKEAWAY",
+    "DELIVERY"
+  ],
+  "_openid": "1824343943104831490",
+  "opening_hours": "09:00-23:35",
+  "name": "蜜雪冰城（万家丽宽寓大厦店）",
+  "position": {
+    "address": "湖南省长沙市芙蓉区东屯渡街道万家丽中路一段139号宽寓大厦105号门面",
+    "geopoint": {
+      "coordinates": [
+        113.031149,
+        28.188158
+      ],
+      "type": "Point"
+    }
+  },
+  "updatedAt": 1724570854657,
+  "phone": "19118916530"
+}
+{
+  "_id": "8df0e92f66c97eba083df64c0c2e5d76",
+  "owner": "1824343943104831490",
+  "createdAt": 1724481210473,
+  "createBy": "1824343943104831490",
+  "business_status": "OPENING",
+  "updateBy": "1824343943104831490",
+  "delivery_method": [
+    "TAKEAWAY"
+  ],
+  "_openid": "1824343943104831490",
+  "opening_hours": "00:00-23:59",
+  "name": "蜜雪冰城（长沙实验中学店）",
+  "position": {
+    "address": "湖南省长沙市芙蓉区紫薇路171号紫来阁135门面",
+    "geopoint": {
+      "coordinates": [
+        113.023578,
+        28.204084
+      ],
+      "type": "Point"
+    }
+  },
+  "updatedAt": 1724570847214,
+  "phone": "17752876122"
+}
+{
+  "_id": "8df0e92f66c990ba084055a000803200",
+  "owner": "1824343943104831490",
+  "createdAt": 1724485818434,
+  "createBy": "1824343943104831490",
+  "business_status": "OPENING",
+  "updateBy": "1824343943104831490",
+  "delivery_method": [
+    "TAKEAWAY"
+  ],
+  "_openid": "1824343943104831490",
+  "opening_hours": "09:25-23:20",
+  "name": "蜜雪冰城（金科佳苑店）",
+  "position": {
+    "address": "湖南省长沙市芙蓉区古曲路金科佳苑15栋1单元1,2号门",
+    "geopoint": {
+      "coordinates": [
+        113.040199,
+        28.195618
+      ],
+      "type": "Point"
+    }
+  },
+  "updatedAt": 1724570814777,
+  "phone": "15179167204"
+}
+{
+  "_id": "9c1e6a3166c990e508480b8a6668a5fd",
+  "owner": "1824343943104831490",
+  "createdAt": 1724485861793,
+  "createBy": "1824343943104831490",
+  "business_status": "OPENING",
+  "updateBy": "1824343943104831490",
+  "delivery_method": [
+    "TAKEAWAY"
+  ],
+  "_openid": "1824343943104831490",
+  "opening_hours": "09:30-23:00",
+  "name": "蜜雪冰城（金苹果店）",
+  "position": {
+    "address": "湖南省长沙市芙蓉区五里牌车站中路蜜雪冰城134-1",
+    "geopoint": {
+      "coordinates": [
+        113.010959,
+        28.189074
+      ],
+      "type": "Point"
+    }
+  },
+  "updatedAt": 1724570775164,
+  "phone": "15974169143"
+}
+{
+  "_id": "8df0e92f66c9910e08406117051a5f64",
+  "owner": "1824343943104831490",
+  "createdAt": 1724485901981,
+  "createBy": "1824343943104831490",
+  "business_status": "OPENING",
+  "updateBy": "1824343943104831490",
+  "delivery_method": [
+    "TAKEAWAY"
+  ],
+  "_openid": "1824343943104831490",
+  "opening_hours": "09:30-23:30",
+  "name": "蜜雪冰城（高岭小区店）",
+  "position": {
+    "address": "湖南省长沙市芙蓉区高岭小区71栋1单元1号(北)底层门面",
+    "geopoint": {
+      "coordinates": [
+        113.041559,
+        28.189898
+      ],
+      "type": "Point"
+    }
+  },
+  "updatedAt": 1724570835874,
+  "phone": "19174905552"
+}
+{
+  "_id": "ef45322e66c9912f08459b637b21b6ce",
+  "owner": "1824343943104831490",
+  "createdAt": 1724485935644,
+  "createBy": "1824343943104831490",
+  "business_status": "OPENING",
+  "updateBy": "1824343943104831490",
+  "delivery_method": [
+    "TAKEAWAY"
+  ],
+  "_openid": "1824343943104831490",
+  "opening_hours": "09:00-23:00",
+  "name": "蜜雪冰城（雨花区高桥店）",
+  "position": {
+    "address": "湖南省长沙市雨花区高桥街道高桥大市场东二环路一段578号现代商贸城北向一楼3-01号",
+    "geopoint": {
+      "coordinates": [
+        113.022402,
+        28.173677
+      ],
+      "type": "Point"
+    }
+  },
+  "updatedAt": 1724570887361,
+  "phone": "17775725586"
+}
+{
+  "_id": "25e993b766c991550844f28f25937850",
+  "owner": "1824343943104831490",
+  "createdAt": 1724485973677,
+  "createBy": "1824343943104831490",
+  "business_status": "OPENING",
+  "updateBy": "1824343943104831490",
+  "delivery_method": [
+    "TAKEAWAY",
+    "DELIVERY"
+  ],
+  "_openid": "1824343943104831490",
+  "opening_hours": "09:30-22:15",
+  "name": "蜜雪冰城（万家丽生活超市店）",
+  "position": {
+    "address": "湖南省长沙市芙蓉区东屯渡街道万家丽路中路一段99号-201万家丽国际购物广场负二楼区c02-1商铺",
+    "geopoint": {
+      "coordinates": [
+        113.031076,
+        28.191107
+      ],
+      "type": "Point"
+    }
+  },
+  "updatedAt": 1724571049948,
+  "phone": "18590330800"
+}
+{
+  "_id": "9bf3df1366c9917708451ced4f93e41f",
+  "owner": "1824343943104831490",
+  "createdAt": 1724486007054,
+  "createBy": "1824343943104831490",
+  "business_status": "OPENING",
+  "updateBy": "1824343943104831490",
+  "delivery_method": [
+    "TAKEAWAY"
+  ],
+  "_openid": "1824343943104831490",
+  "opening_hours": "09:00-22:45",
+  "name": "蜜雪冰城（德政园店）",
+  "position": {
+    "address": "湖南省长沙市芙蓉区荷花园街道德政街19号(原德政园聚心苑20,21栋049号房)",
+    "geopoint": {
+      "coordinates": [
+        113.021227,
+        28.185515
+      ],
+      "type": "Point"
+    }
+  },
+  "updatedAt": 1724570831029,
+  "phone": "19198173919"
+}
+{
+  "_id": "f380561066c991be0840d4430b68989c",
+  "owner": "1824343943104831490",
+  "createdAt": 1724486078538,
+  "createBy": "1824343943104831490",
+  "business_status": "OPENING",
+  "updateBy": "1824343943104831490",
+  "delivery_method": [
+    "TAKEAWAY"
+  ],
+  "_openid": "1824343943104831490",
+  "opening_hours": "09:00-23:00",
+  "name": "蜜雪冰城（五一新村店）",
+  "position": {
+    "address": "湖南省长沙市雨花区高桥街道永定社区H2栋108-1号",
+    "geopoint": {
+      "coordinates": [
+        113.023162,
+        28.181845
+      ],
+      "type": "Point"
+    }
+  },
+  "updatedAt": 1724570891760,
+  "phone": "19313151440"
+}
