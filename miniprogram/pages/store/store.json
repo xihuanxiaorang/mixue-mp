@@ -2,5 +2,7 @@
   "usingComponents": {
     "tabs": "../../components/tabs/tabs"
   },
-  "navigationBarTitleText": "门店列表"
+  "navigationBarTitleText": "门店列表",
+  "enablePullDownRefresh": false,
+  "disableScroll": true
 }

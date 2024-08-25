@@ -1,9 +1,8 @@
-import swiper from '../../api/swiper'
+import swiperApi from '../../api/swiper'
 const computedBehavior = require('miniprogram-computed').behavior
 
 Page({
   behaviors: [computedBehavior],
-
   /**
    * 页面的初始数据
    */
@@ -44,10 +43,11 @@ Page({
   },
 
   /**
-   * 加载轮播图数据
+   * 获取轮播图列表数据
    */
-  async _loadSwiperList() {
-    const { data: swiperList } = await swiper.list()
+  async fetchSwiperList() {
+    const { data: swiperList } = await swiperApi.list()
+    console.log('轮播图列表数据：', swiperList)
     this.setData({ swiperList })
   },
 
@@ -55,7 +55,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-    this._loadSwiperList()
+    this.fetchSwiperList()
   },
 
   /**

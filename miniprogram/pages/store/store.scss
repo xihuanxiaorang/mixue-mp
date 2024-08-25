@@ -1,12 +1,9 @@
 .page {
-  --header-container-height: 98rpx;
-  --store-map-height: 521rpx;
-  --collapse-panel-height: 68rpx;
   min-height: 100vh;
 
   .header-container {
     padding: 0 24rpx 0 38rpx;
-    height: var(--header-container-height);
+    height: 98rpx;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -33,7 +30,6 @@
   .map-container {
     .store-map {
       width: 100%;
-      height: var(--store-map-height);
       position: relative;
       .current-location {
         width: 51rpx;
@@ -47,7 +43,7 @@
 
   .collapse-panel {
     width: 100%;
-    height: var(--collapse-panel-height);
+    height: 68rpx;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -65,7 +61,6 @@
 
   .stores-container {
     width: 100%;
-    height: calc(100vh - var(--header-container-height) - var(--store-map-height) - var(--collapse-panel-height));
     background-color: #f8f8f8;
     .store {
       margin: 24rpx;
@@ -78,6 +73,7 @@
       .info {
         border-right: 1rpx solid #eeeeee;
         flex: 1;
+        padding-right: 23rpx;
         .name {
           font-size: 25rpx;
           font-weight: bold;
@@ -86,7 +82,7 @@
           margin-top: 18rpx;
           display: flex;
           align-items: center;
-          .trading {
+          .business-status {
             width: 111rpx;
             height: 50rpx;
             background-color: #d60017;
@@ -97,7 +93,7 @@
             align-items: center;
             justify-content: center;
           }
-          .room-service {
+          .delivery-method {
             margin-left: 14rpx;
             width: 111rpx;
             height: 50rpx;

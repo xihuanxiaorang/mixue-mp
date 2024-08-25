@@ -10,6 +10,7 @@
     <map
       id="store-map"
       class="store-map"
+      style="height: {{ collapsed ? 0: 521 }}rpx;"
       show-location
       longitude="{{ longitude }}"
       latitude="{{ latitude }}"
@@ -28,96 +29,25 @@
       <image class="icon" src="/assets/images/arrow-up.svg" />
     </block>
   </view>
-  <scroll-view class="stores-container" scroll-y>
-    <view class="store">
+  <scroll-view class="stores-container" style="height: calc(100vh - {{ collapsed ? 166 : 687 }}rpx);" scroll-y>
+    <view class="store" wx:for="{{ storeList }}" wx:key="index">
       <view class="info">
-        <view class="name">蜜雪冰城（万家丽宽寓大厦店）</view>
+        <view class="name">{{ item.name }}</view>
         <view class="tag">
-          <view class="trading">营业中</view>
-          <view class="room-service">可外送</view>
+          <view class="business-status">{{ item.business_status === 'OPENING' ? '营业中' : '门店休息' }}</view>
+          <view class="delivery-method" wx:if="{{ item.canDelivery }}">可外送</view>
         </view>
-        <view class="opening-hours">营业时间：09:00-23:35</view>
-        <view class="address">直线距离285m | 湖南省长沙市芙蓉区万家丽 中路一段139号宽寓大厦105号</view>
+        <view class="opening-hours">营业时间：{{ item.opening_hours }}</view>
+        <view class="address">直线距离{{ item.distance }}m | {{ item.position.address }}</view>
       </view>
       <view class="location">
         <image class="star" src="/assets/images/star.svg" />
         <view class="label">去下单</view>
         <view class="action-wrapper">
-          <view class="action-btn navigation">
+          <view class="action-btn navigation" bind:tap="openLocation" data-geopoint="{{ item.position.geopoint }}">
             <image src="/assets/images/navigation.svg" />
           </view>
-          <view class="action-btn phone">
-            <image src="/assets/images/phone.svg" />
-          </view>
-        </view>
-      </view>
-    </view>
-    <view class="store">
-      <view class="info">
-        <view class="name">蜜雪冰城（万家丽生活超市店）</view>
-        <view class="tag">
-          <view class="trading">营业中</view>
-          <view class="room-service">可外送</view>
-        </view>
-        <view class="opening-hours">营业时间：09:00-23:35</view>
-        <view class="address"
-          >直线距离340m | 湖南省长沙市芙蓉区东屯渡 街道万家丽中路一段99号-201万家丽国际购 物广场负二楼区C02-1商铺</view
-        >
-      </view>
-      <view class="location">
-        <image class="star" src="/assets/images/star.svg" />
-        <view class="label">去下单</view>
-        <view class="action-wrapper">
-          <view class="action-btn navigation">
-            <image src="/assets/images/navigation.svg" />
-          </view>
-          <view class="action-btn phone">
-            <image src="/assets/images/phone.svg" />
-          </view>
-        </view>
-      </view>
-    </view>
-    <view class="store">
-      <view class="info">
-        <view class="name">蜜雪冰城（万家丽三店）</view>
-        <view class="tag">
-          <view class="trading">营业中</view>
-          <view class="room-service">可外送</view>
-        </view>
-        <view class="opening-hours">营业时间：09:30-22:00</view>
-        <view class="address">直线距离339m | 万家丽国际购物广场负一楼A37-6#商楼</view>
-      </view>
-      <view class="location">
-        <image class="star" src="/assets/images/star.svg" />
-        <view class="label">去下单</view>
-        <view class="action-wrapper">
-          <view class="action-btn navigation">
-            <image src="/assets/images/navigation.svg" />
-          </view>
-          <view class="action-btn phone">
-            <image src="/assets/images/phone.svg" />
-          </view>
-        </view>
-      </view>
-    </view>
-    <view class="store">
-      <view class="info">
-        <view class="name">蜜雪冰城（万家丽负一楼店）</view>
-        <view class="tag">
-          <view class="trading">营业中</view>
-          <view class="room-service">可外送</view>
-        </view>
-        <view class="opening-hours">营业时间：09:30-22:10</view>
-        <view class="address">直线距离339m | 湖南省长沙市芙蓉区万家丽购物广场负一楼A24#</view>
-      </view>
-      <view class="location">
-        <image class="star" src="/assets/images/star.svg" />
-        <view class="label">去下单</view>
-        <view class="action-wrapper">
-          <view class="action-btn navigation">
-            <image src="/assets/images/navigation.svg" />
-          </view>
-          <view class="action-btn phone">
+          <view class="action-btn phone" bind:tap="phoneCall" data-phone="{{ item.phone }}">
             <image src="/assets/images/phone.svg" />
           </view>
         </view>

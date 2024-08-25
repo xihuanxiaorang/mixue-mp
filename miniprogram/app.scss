@@ -1,0 +1,7 @@
+/* 隐藏滚动条 */
+scroll-view ::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+  display: none;
+}
