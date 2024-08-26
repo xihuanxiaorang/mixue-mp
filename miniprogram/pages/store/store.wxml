@@ -15,6 +15,7 @@
       longitude="{{ longitude }}"
       latitude="{{ latitude }}"
       markers="{{ markers }}"
+      bindmarkertap="onMarkerTap"
     >
       <image class="current-location" src="/assets/images/current-location.svg" bind:tap="moveToCurrentLocation" />
     </map>
@@ -29,29 +30,76 @@
       <image class="icon" src="/assets/images/arrow-up.svg" />
     </block>
   </view>
-  <scroll-view class="stores-container" style="height: calc(100vh - {{ collapsed ? 166 : 687 }}rpx);" scroll-y>
-    <view class="store" wx:for="{{ storeList }}" wx:key="index">
-      <view class="info">
-        <view class="name">{{ item.name }}</view>
-        <view class="tag">
-          <view class="business-status">{{ item.business_status === 'OPENING' ? '营业中' : '门店休息' }}</view>
-          <view class="delivery-method" wx:if="{{ item.canDelivery }}">可外送</view>
-        </view>
-        <view class="opening-hours">营业时间：{{ item.opening_hours }}</view>
-        <view class="address">直线距离{{ item.distance }}m | {{ item.position.address }}</view>
-      </view>
-      <view class="location">
-        <image class="star" src="/assets/images/star.svg" />
-        <view class="label">去下单</view>
-        <view class="action-wrapper">
-          <view class="action-btn navigation" bind:tap="openLocation" data-geopoint="{{ item.position.geopoint }}">
-            <image src="/assets/images/navigation.svg" />
+  <scroll-view
+    class="stores-container"
+    enhanced
+    show-scrollbar="{{ false }}"
+    scroll-y
+    style="height: calc(100vh - {{ collapsed ? 166 : 687 }}rpx);"
+  >
+    <block wx:if="{{ storeList && storeList.length > 0 }}">
+      <view class="store" wx:for="{{ storeList }}" wx:key="index" bind:tap="popupStoreDetail" data-store="{{ item }}">
+        <view class="info">
+          <view class="name">{{ item.name }}</view>
+          <view class="tag">
+            <view class="business-status">{{ item.business_status === 'OPENING' ? '营业中' : '门店休息' }}</view>
+            <view class="delivery-method" wx:if="{{ item.canDelivery }}">可外送</view>
           </view>
-          <view class="action-btn phone" bind:tap="phoneCall" data-phone="{{ item.phone }}">
-            <image src="/assets/images/phone.svg" />
+          <view class="opening-hours">营业时间：{{ item.opening_hours }}</view>
+          <view class="address">直线距离{{ item.distance }}m | {{ item.position.address }}</view>
+        </view>
+        <view class="location">
+          <image class="star" src="/assets/images/star.svg" />
+          <view class="label">去下单</view>
+          <view class="action-wrapper">
+            <view class="action-btn navigation" bind:tap="openLocation" data-geopoint="{{ item.position.geopoint }}">
+              <image src="/assets/images/navigation.svg" />
+            </view>
+            <view class="action-btn phone" bind:tap="phoneCall" data-phone="{{ item.phone }}">
+              <image src="/assets/images/phone.svg" />
+            </view>
           </view>
         </view>
       </view>
-    </view>
+      <!-- 空白区域，用于底部安全距离 -->
+      <view class="blank"></view>
+    </block>
+    <block wx:else>
+      <view class="empty">
+        <image src="/assets/images/empty.png" />
+        <view class="desc">搜索不到附近的门店，点击刷新试试</view>
+      </view>
+    </block>
   </scroll-view>
+  <page-container
+    class="store-detail-popup"
+    show="{{ storeDetailPopupShow }}"
+    round
+    bind:afterleave="closeStoreDetailPopup"
+  >
+    <view class="notification">
+      <image class="icon" src="/assets/images/speaker.svg" mode="" />
+      <view class="content">我们的门店很多，千万不要选错哦~</view>
+    </view>
+    <view class="detail-info-wrapper">
+      <view class="header">
+        <view class="info">
+          <view class="name">{{ currentStore.name }}</view>
+          <view class="address">{{ currentStore.position.address }}</view>
+        </view>
+        <view class="distance">
+          <view>距离</view>
+          <view style="color: red">{{ currentStore.distance }}m</view></view
+        >
+      </view>
+      <map
+        id="store-detail-map"
+        class="store-detail-map"
+        longitude="{{ currentStore.position.geopoint.longitude }}"
+        latitude="{{ currentStore.position.geopoint.latitude }}"
+        markers="{{ markers }}"
+      />
+      <button class="menu-btn">进入菜单</button>
+    </view>
+  </page-container>
 </view>

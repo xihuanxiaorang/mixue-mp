@@ -153,5 +153,98 @@
         }
       }
     }
+    .blank {
+      padding-bottom: calc(16rpx + constant(safe-area-inset-bottom));
+      padding-bottom: calc(16rpx + env(safe-area-inset-bottom));
+    }
+    .empty {
+      width: 100%;
+      height: 100%;
+      padding-top: 71rpx;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      image {
+        width: 364rpx;
+        height: 276rpx;
+      }
+      .desc {
+        margin-top: 30rpx;
+        font-size: 20rpx;
+        color: #aaaaaa;
+      }
+    }
+  }
+
+  .store-detail-popup {
+    .notification {
+      width: 100%;
+      height: 86rpx;
+      display: flex;
+      align-items: center;
+      background-color: #fcf0f4;
+      padding: 0 30rpx;
+      .icon {
+        width: 38rpx;
+        height: 38rpx;
+      }
+      .content {
+        margin-left: 14rpx;
+        font-size: 20rpx;
+        color: #e60012;
+      }
+    }
+    .detail-info-wrapper {
+      padding: 0 30rpx;
+      margin-bottom: calc(16rpx + constant(safe-area-inset-bottom));
+      margin-bottom: calc(16rpx + env(safe-area-inset-bottom));
+      .header {
+        margin: 25rpx 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        .info {
+          padding-right: 30rpx;
+          .name {
+            font-size: 26rpx;
+            line-height: 26rpx;
+            font-weight: bold;
+          }
+          .address {
+            margin-top: 14rpx;
+            font-size: 20rpx;
+            line-height: 20rpx;
+            color: #aaaaaa;
+          }
+        }
+        .distance {
+          flex: 1 0 auto;
+          font-size: 20rpx;
+          color: #aaaaaa;
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+        }
+      }
+      .store-detail-map {
+        width: 100%;
+        height: 392rpx;
+      }
+      .menu-btn {
+        margin-top: 25rpx;
+        width: 100%;
+        height: 85rpx;
+        border-radius: 13rpx;
+        background-color: #e60012;
+        color: #ffffff;
+        font-size: 29rpx;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &.button-hover {
+          background-color: #c30014;
+        }
+      }
+    }
   }
 }
