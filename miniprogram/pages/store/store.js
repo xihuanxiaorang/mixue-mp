@@ -1,14 +1,16 @@
+import { storeBindingsBehavior } from 'mobx-miniprogram-bindings'
 import { storeApi } from '../../api/index'
+import { userStore } from '../../store/index'
 const QQMapWX = require('../../libs/qqmap-wx-jssdk.min.js')
 const computedBehavior = require('miniprogram-computed').behavior
-let mapContext
-let qqmapsdk
+const chooseLocation = requirePlugin('chooseLocation')
 // 腾讯位置服务申请的key
 const key = 'ZCBBZ-VTZ3T-HDOXQ-LC4N6-SAJC6-LMFII'
-const chooseLocation = requirePlugin('chooseLocation')
+let qqmapsdk = new QQMapWX({ key })
+let mapContext
 
 Page({
-  behaviors: [computedBehavior],
+  behaviors: [storeBindingsBehavior, computedBehavior],
   /**
    * 页面的初始数据
    */
@@ -18,17 +20,26 @@ Page({
       { value: 'recent', label: '常去门店' },
       { value: 'star', label: '收藏门店' },
     ],
-    longitude: 0,
-    latitude: 0,
     storeList: [],
     collapsed: false,
     storeDetailPopupShow: false,
     currentStore: null,
   },
 
+  storeBindings: [
+    {
+      store: userStore,
+      fields: {
+        currentLocation: (store) => store.currentLocation,
+      },
+      actions: ['updateCurrentLocation'],
+    },
+    // 其他store
+  ],
+
   computed: {
     markers(data) {
-      return data.storeList.map((store, index) => {
+      return data.storeList?.map((store, index) => {
         const { latitude, longitude } = store.position.geopoint
         return {
           id: index,
@@ -90,10 +101,7 @@ Page({
    */
   searchStore() {
     const referer = 'mixue-mp'
-    const location = JSON.stringify({
-      latitude: this.data.latitude,
-      longitude: this.data.longitude,
-    })
+    const location = JSON.stringify(this.data.currentLocation)
     wx.navigateTo({
       url: 'plugin://chooseLocation/index?key=' + key + '&referer=' + referer + '&location=' + location,
     })
@@ -127,7 +135,7 @@ Page({
    * 移动地图至当前用户坐标位置
    */
   moveToCurrentLocation() {
-    const { longitude, latitude } = this.data
+    const { longitude, latitude } = this.data.currentLocation
     this.moveToLocation(longitude, latitude)
     this.fetchStoreList(longitude, latitude)
   },
@@ -182,8 +190,7 @@ Page({
    */
   async onLoad(options) {
     this.initMapContext()
-    this.initQQMapSDK()
-    const { longitude, latitude } = await this.getCurrentLocation()
+    const { longitude, latitude } = this.data.currentLocation || (await this.updateCurrentLocation())
     this.fetchStoreList(longitude, latitude)
   },
 
@@ -256,32 +263,6 @@ Page({
     storeList.forEach((store) => {
       store.canDelivery = store.delivery_method.includes('DELIVERY')
     })
-  },
-
-  /**
-   * 获取用户当前的坐标位置
-   */
-  getCurrentLocation() {
-    return new Promise((resolve, reject) => {
-      wx.getLocation({ type: 'gcj02' })
-        .then((res) => {
-          const { longitude, latitude } = res
-          console.log('用户当前坐标位置：', longitude, latitude)
-          this.setData({ longitude, latitude })
-          resolve({ longitude, latitude })
-        })
-        .catch((err) => {
-          console.error(err)
-          reject(err)
-        })
-    })
-  },
-
-  /**
-   * 初始化腾讯位置服务SDK
-   */
-  initQQMapSDK() {
-    qqmapsdk = new QQMapWX({ key })
   },
 
   /**

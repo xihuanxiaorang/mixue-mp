@@ -13,17 +13,15 @@ Page({
     currentIndex: 0,
   },
 
-  storeBindings: [
-    {
-      //   namespace: 'user',
-      store: userStore,
-      fields: {
-        phone: (store) => store.phone,
-        desensitivePhone: () => userStore.desensitivePhone,
-      },
+  storeBindings: {
+    store: userStore,
+    fields: {
+      phone: (store) => store.phone,
+      desensitivePhone: (store) => store.desensitivePhone,
+      nearbyStore: (store) => store.nearbyStore,
     },
-    // 其他store
-  ],
+    actions: ['updateNearbyStore'],
+  },
 
   /**
    * 跳转到登录页面
@@ -59,5 +57,6 @@ Page({
    */
   onLoad(options) {
     this.fetchSwiperList()
+    !this.data.nearbyStore && this.updateNearbyStore()
   },
 })

@@ -1,8 +1,10 @@
 import { makeAutoObservable } from 'mobx-miniprogram'
-import { userApi } from '../../api/index'
+import { userApi, storeApi } from '../../api/index'
 
 class UserStore {
   loginUser = wx.getStorageSync('user')
+  currentLocation = null
+  nearbyStore = null
 
   constructor() {
     makeAutoObservable(this)
@@ -49,6 +51,43 @@ class UserStore {
       } catch (err) {
         console.error(err)
         reject(err) // 登录失败，拒绝 Promise 并返回错误
+      }
+    })
+  }
+
+  /**
+   * 更新用户当前的坐标位置
+   *
+   * @returns {Promise} - 返回一个 Promise 对象，解析后的值是用户当前的坐标位置
+   */
+  updateCurrentLocation() {
+    return new Promise((resolve, reject) => {
+      wx.getLocation({ type: 'gcj02' })
+        .then((res) => {
+          const { longitude, latitude } = res
+          console.log('用户当前坐标位置：', longitude, latitude)
+          this.currentLocation = { longitude, latitude }
+          resolve(this.currentLocation)
+        })
+        .catch((err) => {
+          console.error(err)
+          reject(err)
+        })
+    })
+  }
+
+  updateNearbyStore() {
+    return new Promise(async (resolve, reject) => {
+      try {
+        const { longitude, latitude } = this.currentLocation || (await this.updateCurrentLocation())
+        const { data: storeList } = await storeApi.list(longitude, latitude, 1)
+        const nearbyStore = storeList && storeList.length > 0 && storeList[0]
+        console.log('离用户当前位置最近的门店：', nearbyStore)
+        this.nearbyStore = nearbyStore
+        resolve(nearbyStore)
+      } catch (err) {
+        console.error(err)
+        reject(err)
       }
     })
   }

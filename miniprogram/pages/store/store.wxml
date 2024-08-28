@@ -12,8 +12,8 @@
       class="store-map"
       style="height: {{ collapsed ? 0: 521 }}rpx;"
       show-location
-      longitude="{{ longitude }}"
-      latitude="{{ latitude }}"
+      longitude="{{ currentLocation.longitude }}"
+      latitude="{{ currentLocation.latitude }}"
       markers="{{ markers }}"
       bindmarkertap="onMarkerTap"
     >
