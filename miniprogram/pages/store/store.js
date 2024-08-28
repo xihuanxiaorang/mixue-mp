@@ -1,4 +1,4 @@
-import storeApi from '../../api/store'
+import { storeApi } from '../../api/index'
 const QQMapWX = require('../../libs/qqmap-wx-jssdk.min.js')
 const computedBehavior = require('miniprogram-computed').behavior
 let mapContext

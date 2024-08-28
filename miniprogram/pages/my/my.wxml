@@ -1,10 +1,10 @@
 <view class="page">
-  <view class="member-container {{ mobile ? 'active' : '' }}">
+  <view class="member-container {{ phone ? 'active' : '' }}">
     <view class="vip-wrapper">
-      <block wx:if="{{ mobile }}">
+      <block wx:if="{{ phone }}">
         <view class="info">
           <image class="avatar" src="/assets/images/vip.png" />
-          <view class="phone">{{ desensitiveMobile }}</view>
+          <view class="phone">{{ desensitivePhone}}</view>
         </view>
         <view class="sign-in-btn">签到</view>
       </block>

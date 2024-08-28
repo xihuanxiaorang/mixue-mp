@@ -1,26 +1,29 @@
-import swiperApi from '../../api/swiper'
-const computedBehavior = require('miniprogram-computed').behavior
+import { swiperApi } from '../../api/index'
+import { storeBindingsBehavior } from 'mobx-miniprogram-bindings'
+import { userStore } from '../../store/index'
 
 Page({
-  behaviors: [computedBehavior],
+  behaviors: [storeBindingsBehavior],
+
   /**
    * 页面的初始数据
    */
   data: {
     swiperList: [],
     currentIndex: 0,
-    mobile: '',
   },
 
-  computed: {
-    desensitiveMobile(data) {
-      let mobile = data.mobile
-      if (mobile) {
-        mobile = mobile.replace(/^(\d{3})\d+(\d{2})$/, '$1******$2')
-      }
-      return mobile
+  storeBindings: [
+    {
+      //   namespace: 'user',
+      store: userStore,
+      fields: {
+        phone: (store) => store.phone,
+        desensitivePhone: () => userStore.desensitivePhone,
+      },
     },
-  },
+    // 其他store
+  ],
 
   /**
    * 跳转到登录页面
@@ -56,17 +59,5 @@ Page({
    */
   onLoad(options) {
     this.fetchSwiperList()
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow() {
-    const mobile = wx.getStorageSync('mobile')
-    if (mobile) {
-      this.setData({
-        mobile,
-      })
-    }
   },
 })

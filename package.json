@@ -15,6 +15,8 @@
     }
   },
   "dependencies": {
-    "miniprogram-computed": "^5.0.0"
+    "miniprogram-computed": "^5.0.0",
+    "mobx-miniprogram": "^6.12.3",
+    "mobx-miniprogram-bindings": "^4.0.0"
   }
 }

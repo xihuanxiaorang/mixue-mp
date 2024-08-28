@@ -9,7 +9,7 @@ const command = db.command
  * @param {number} [maxDistance=5000] - 最大查询距离（米），默认为 5000 米
  * @returns {Promise} - 返回一个 Promise，解析为包含附近门店的查询结果
  */
-const list = (longitude, latitude, maxDistance = 5000) => {
+export const list = (longitude, latitude, maxDistance = 5000) => {
   return db
     .collection('mx_store')
     .where({
@@ -22,8 +22,4 @@ const list = (longitude, latitude, maxDistance = 5000) => {
     })
     .limit(10)
     .get()
-}
-
-export default {
-  list,
 }

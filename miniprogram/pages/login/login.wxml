@@ -6,5 +6,5 @@
   <!-- 由于没有个体户/企业账号，因此没有权限使用该功能 -->
   <!-- <button class="login-btn" open-type="getPhoneNumber" bindgetphonenumber="login">一键登录</button> -->
   <button class="login-btn" bind:tap="login">一键登录</button>
-  <view class="cancle">暂不登录</view>
+  <view class="cancle" bind:tap="cancle">暂不登录</view>
 </view>
