@@ -1,0 +1,73 @@
+.page {
+  min-height: 100vh;
+
+  .header-container {
+    display: flex;
+    align-items: center;
+    // border-bottom: 1rpx solid #eaeaea;
+    .van-tabs--line {
+      width: 183rpx;
+      .van-tab {
+        font-size: 32rpx;
+        color: #777777;
+        height: 40px;
+        &.van-tab--active {
+          color: #000000;
+          font-weight: bold;
+        }
+      }
+    }
+    .search {
+      margin-left: 43rpx;
+      width: 279rpx;
+      height: 63rpx;
+      background-color: #f3f2f7;
+      border-radius: 30rpx;
+      padding: 0 27rpx;
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      .icon {
+        width: 25rpx;
+        height: 25rpx;
+      }
+      .label {
+        margin-left: 24rpx;
+        font-size: 24rpx;
+        color: #aaaaaa;
+      }
+    }
+  }
+
+  .store-container {
+    padding-top: 34rpx;
+    padding-left: 27rpx;
+    .store {
+      display: flex;
+      align-items: center;
+      image {
+        width: 27rpx;
+        height: 27rpx;
+      }
+      .name {
+        margin-left: 15rpx;
+        font-size: 29rpx;
+        font-weight: bold;
+      }
+    }
+    .location {
+      margin-top: 21rpx;
+      display: flex;
+      align-items: center;
+      image {
+        width: 27rpx;
+        height: 27rpx;
+      }
+      .desc {
+        margin-left: 15rpx;
+        font-size: 25rpx;
+        color: #777777;
+      }
+    }
+  }
+}

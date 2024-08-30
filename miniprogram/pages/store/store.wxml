@@ -1,6 +1,8 @@
 <view class="page">
   <view class="header-container">
-    <tabs tabs="{{ tabs }}"></tabs>
+    <van-tabs border="{{ false }}">
+      <van-tab wx:for="{{ tabs }}" wx:key="index" title="{{ item.label }}"></van-tab>
+    </van-tabs>
     <view class="search">
       <image class="icon" src="/assets/images/search.svg" mode="" />
       <view class="label" bind:tap="searchStore">搜索门店</view>

@@ -1,6 +1,43 @@
 App({
+  globalData: {
+    /**
+     * 胶囊顶部距屏幕顶部距离
+     */
+    menuBtnTop: 0,
+    /**
+     * 胶囊高度
+     */
+    menuBtnHeight: 0,
+    /**
+     * 状态栏高度
+     */
+    statusBarHeight: 0,
+    /**
+     * 导航栏高度
+     */
+    navigationBarHeight: 0,
+  },
+
   onLaunch: function () {
     this.initCloud()
+    this.calculateNavigationBarInfo()
+  },
+
+  /**
+   * 计算导航栏的高度和其他相关信息
+   * 参考自  https://blog.csdn.net/TP19981017/article/details/109147265 & https://blog.csdn.net/qq_43342124/article/details/122148390
+   */
+  calculateNavigationBarInfo() {
+    const { top: menuBtnTop, height: menuBtnHeight } = wx.getMenuButtonBoundingClientRect()
+    const { statusBarHeight } = wx.getWindowInfo()
+    // 导航栏高度 = (胶囊顶部距屏幕顶部距离 - 状态栏高度) * 2 + 胶囊高度
+    const navigationBarHeight = (menuBtnTop - statusBarHeight) * 2 + menuBtnHeight
+    this.globalData = Object.assign({}, this.globalData, {
+      menuBtnTop,
+      menuBtnHeight,
+      statusBarHeight,
+      navigationBarHeight,
+    })
   },
 
   /**

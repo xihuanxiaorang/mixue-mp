@@ -1,46 +1,44 @@
+import { storeBindingsBehavior } from 'mobx-miniprogram-bindings'
+import { userStore } from '../../store/index'
+
 Page({
+  behaviors: [storeBindingsBehavior],
   /**
    * 页面的初始数据
    */
-  data: {},
+  data: {
+    tabs: [
+      { value: 'takeaway', label: '自提' },
+      { value: 'delivery', label: '外送' },
+    ],
+    headerStyle: '',
+  },
+
+  storeBindings: {
+    store: userStore,
+    fields: {
+      phone: (store) => store.phone,
+      desensitivePhone: (store) => store.desensitivePhone,
+      nearbyStore: (store) => store.nearbyStore,
+    },
+    actions: ['updateNearbyStore'],
+  },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad(options) {},
+  onLoad(options) {
+    this.setHeaderStyle()
+    !this.data.nearbyStore && this.updateNearbyStore()
+  },
 
   /**
-   * 生命周期函数--监听页面初次渲染完成
+   * 设置头部区域的样式
    */
-  onReady() {},
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow() {},
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide() {},
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload() {},
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh() {},
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom() {},
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage() {},
+  setHeaderStyle() {
+    const { navigationBarHeight, statusBarHeight } = getApp().globalData
+    this.setData({
+      headerStyle: `height: ${navigationBarHeight}px;padding-top: ${statusBarHeight}px;`,
+    })
+  },
 })

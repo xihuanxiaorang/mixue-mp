@@ -1,6 +1,7 @@
 {
   "usingComponents": {
-    "tabs": "../../components/tabs/tabs"
+    "van-tab": "vant-weapp/tab",
+    "van-tabs": "vant-weapp/tabs"
   },
   "navigationBarTitleText": "门店列表",
   "enablePullDownRefresh": false,

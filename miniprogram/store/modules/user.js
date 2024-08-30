@@ -80,7 +80,7 @@ class UserStore {
     return new Promise(async (resolve, reject) => {
       try {
         const { longitude, latitude } = this.currentLocation || (await this.updateCurrentLocation())
-        const { data: storeList } = await storeApi.list(longitude, latitude, 1)
+        const storeList = await storeApi.list(longitude, latitude, 1)
         const nearbyStore = storeList && storeList.length > 0 && storeList[0]
         console.log('离用户当前位置最近的门店：', nearbyStore)
         this.nearbyStore = nearbyStore

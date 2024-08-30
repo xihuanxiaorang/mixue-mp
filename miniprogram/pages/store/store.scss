@@ -2,11 +2,23 @@
   min-height: 100vh;
 
   .header-container {
-    padding: 0 24rpx 0 38rpx;
+    padding: 0 24rpx 0 34rpx;
     height: 98rpx;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    .van-tabs--line {
+      width: 410rpx;
+      .van-tab {
+        font-size: 26rpx;
+        color: #777777;
+        &.van-tab--active {
+          font-size: 30rpx;
+          color: #000000;
+          font-weight: bold;
+        }
+      }
+    }
     .search {
       width: 179rpx;
       height: 60rpx;

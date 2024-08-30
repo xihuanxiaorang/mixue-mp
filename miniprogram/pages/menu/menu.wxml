@@ -1,0 +1,23 @@
+<view class="page">
+  <view class="header-container" style="{{ headerStyle }}">
+    <van-tabs border="{{ false }}">
+      <van-tab wx:for="{{ tabs }}" wx:key="index" title="{{ item.label }}"></van-tab>
+    </van-tabs>
+    <view class="search">
+      <image class="icon" src="/assets/images/search.svg" mode="" />
+      <view class="label">冰鲜柠檬水</view>
+    </view>
+  </view>
+
+  <view class="store-container">
+    <view class="store">
+      <image class="star" src="/assets/images/star.svg" mode="" />
+      <view class="name">{{ nearbyStore.name }}</view>
+      <image class="arrow-right" src="/assets/images/arrow-right.svg" mode="" />
+    </view>
+    <view class="location">
+      <image src="/assets/images/location.svg" mode="" />
+      <view class="desc">直线距离{{ nearbyStore.distance }}m</view>
+    </view>
+  </view>
+</view>
